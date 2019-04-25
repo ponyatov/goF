@@ -1,0 +1,7 @@
+package lexer
+
+%%{
+	machine FORTH;
+}%%
+
+func Parse(cmd string) {}
