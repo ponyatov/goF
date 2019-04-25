@@ -54,14 +54,14 @@ func (s *Stack) push(value int) { s.data += value; s.ptr++ }
 // func (s Stack) push(value int)  { fmt.Println("pushmanda", s) } // no poly
 
 type FVM struct {
-	Msz int
-	Rsz int
-	Dsz int
-	Ip  int
-	Cp  int
-	op  byte
-	Dp  int
-	Rp  int
+	Msz int  /// memory size, bytes
+	Rsz int  /// return stack size, cells
+	Dsz int  /// data stack size, cells
+	Ip  int  /// instruction pointer
+	op  byte /// current opcode
+	Cp  int  /// compiler pointer
+	Dp  int  /// data stack pointer
+	Rp  int  /// return stack pointer
 }
 
 func NewFVM(M, R, D int) FVM {
@@ -84,4 +84,5 @@ func main() {
 	fmt.Println(NewFVM(Msz, Rsz, Dsz))
 	frame.Head(frame.NewFrame("hello", "world"))
 	fmt.Println(frame.Pool)
+	fmt.Println(frame.Frame{Tag: "tag", Val: "val"})
 }
