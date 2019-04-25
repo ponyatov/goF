@@ -4,6 +4,7 @@ package main
 
 import (
 	"fmt"
+	"frame"
 	"lexer"
 	"os"
 )
@@ -81,4 +82,6 @@ func main() {
 	fmt.Println(os.Args, power, x)
 	lexer.Parse("# hello")
 	fmt.Println(NewFVM(Msz, Rsz, Dsz))
+	frame.Head(frame.NewFrame("hello", "world"))
+	fmt.Println(frame.Pool)
 }
